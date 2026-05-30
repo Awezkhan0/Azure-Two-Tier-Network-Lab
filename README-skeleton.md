@@ -47,13 +47,11 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 ---
 
 ## What I Tested
+- ☑ **Test 1 —** Connected directly to web-vm using Remote Desktop. Worked because web-nsg allows port 3389 from the internet.
+- ☑ **Test 2** — Pinged app-vm's private IP from web-vm. Initially failed because Windows Server blocks ICMP by default. Fixed by enabling ICMP via PowerShell on app-vm: `netsh advfirewall firewall add rule name="Allow ICMPv4" protocol=icmpv4:8,any dir=in action=allow`
+- ❌ **Test 3** — Tried to RDP directly into app-vm from my laptop. Failed — as expected. app-vm has no public IP so it cannot be reached from the internet.
 
-> ✏️ Describe each test in one sentence — what did you try, and did it work or fail?
-
-- **Test 1 —** 
-- **Test 2 —** 
-- **Test 3 —** 
-- **Test 4 —** 
+- ☑ **Test 4** — RDP'd into app-vm through web-vm using `mstsc /v:10.0.2.4` from PowerShell. Worked because the connection came from web-subnet which app-nsg allows.
 
 
 
