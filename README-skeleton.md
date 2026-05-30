@@ -27,23 +27,22 @@ In this project I built a secure two-tier network using Azure Portal. I created 
       - **Virtual Machine** (app-vm) — Windows Server 2022, no public IP, private backend
       - **NSG** (app-nsg) — allows traffic from web-subnet only
 
-
-
-
 ---
 
-## Security Rules
+## Security Rules 
 
-> ✏️ In your own words, explain what each NSG does. Think of the bouncer analogy — what is each one allowing and blocking?
+### web-nsg (For Public layer)
+| Priority | Rule Name | Port | Action | Reason |
+|---|---|---|---|---|
+| 100 | Allow-RDP | 3389 | Allow | So admins can connect |
+| 110 | Allow-HTTP | 80 | Allow | For future web server traffic |
+| 65500 | DenyAllInBound | Any | Deny | Block everything else |
 
-### web-nsg
-> ✏️ What ports did you open and why?
-
-### app-nsg
-> ✏️ What is the rule that makes the vault secure? Where does traffic have to come from?
-
-
-
+### app-nsg (For Private layer)
+| Priority | Rule Name | Source | Port | Action | Reason |
+|---|---|---|---|---|---|
+| 100 | Allow-From-WebSubnet | 10.0.1.0/24 | Any | Allow | Only Reception can enter |
+| 200 | Deny-All-Inbound | Any | Any | Deny | Everyone else blocked |
 
 ---
 
