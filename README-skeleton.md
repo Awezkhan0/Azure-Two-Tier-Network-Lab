@@ -25,13 +25,14 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 
 ## What I Used
 
-> ✏️ Just list the Azure resources you created. You already know these — VNet, subnets, NSGs, VMs etc.
-
-| Resource | Name | What it does |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+- **Resource Group** (project-rg)
+  - **Virtual Network** (project-vnet) — 10.0.0.0/16
+    - **Subnet** (web-subnet) — 10.0.1.0/24
+      - **Virtual Machine** (web-vm) — Windows Server 2022, public IP, jump box
+      - **NSG** (web-nsg) — allows RDP (3389) and HTTP (80)
+    - **Subnet** (app-subnet) — 10.0.2.0/24
+      - **Virtual Machine** (app-vm) — Windows Server 2022, no public IP, private backend
+      - **NSG** (app-nsg) — allows traffic from web-subnet only
 
 
 
