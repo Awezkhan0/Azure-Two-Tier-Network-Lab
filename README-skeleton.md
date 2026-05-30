@@ -1,20 +1,16 @@
 # Azure Secure Two-Tier Network Lab
 
 ## What is this project?
-
-> ✏️ In 2-3 sentences, explain what you built in plain English.
-> Example starter: "In this project I built a..."
-> Think about: What are the two VMs? What is the point of keeping one hidden?
-
-
-
-
+In this project I built a secure two-tier network using Azure Portal. I created a private layer (app-vm) that has no public IP and can only be accessed through a jump box which is the public VM (web-vm.) The purpose of this was to have a private VM that cannot be directly reached from the internet, simulating how a real backend server or database would be protected in a production environment."
 ---
 
 ## The Architecture
+**Web-VM (web-subnet)** - This is acessible to admins and is where a web server would live. In this lab it's purpose is to be used as a security gateway to access the private backend server
 
-> ✏️ Describe the layout in your own words — what is web-vm, what is app-vm, how do they relate?
-> You can keep the diagram below — just explain it in your own words above it.
+
+**App-VM (app-subnet)** — Private backend server with no public IP. 
+Cannot be reached directly from the internet. 
+The only route in is through web-vm on the internal network.
 
 ```
 🌍 Internet
