@@ -1,7 +1,7 @@
 # Azure Secure Two-Tier Network Lab
 
 ## What is this project?
-In this project I built a secure two-tier network using Azure Portal. I created a private layer (app-vm) that has no public IP and can only be accessed through a jump box which is the public VM (web-vm.) The purpose of this was to have a private VM that cannot be directly reached from the internet, simulating how a real backend server or database would be protected in a production environment."
+In this project I built a secure two-tier network using Azure Portal. I created a private layer that has no public IP and can only be accessed through a jump box without the use of Bastion. The purpose of this was to have a private VM that cannot be directly reached from the internet, simulating how a real backend server or database would be protected in a production environment.
 ---
 
 ## The Architecture
