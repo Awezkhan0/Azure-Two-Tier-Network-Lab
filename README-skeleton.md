@@ -75,20 +75,28 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 ---
 
 ### Problem 2 — NSGs not showing when associating to subnets
-**What happened:**
+**What happened:** When trying to attach the NSGs to the subnets, the VNet showed as "No available items" in the dropdown.
 
-**Why it happened:**
+**Why it happened:** The NSGs were created in North Europe but the VNet had been moved to West Europe. Azure resources must be in the same region to work together at the subnet level.
 
-**How I fixed it:**
+**How I fixed it:** Deleted the old NSGs and recreated them in West Europe — the same region as the VNet. After that the association worked immediately.
+
+**What I learned:** Region consistency is critical in Azure. NSGs, VNets, and VMs must all be in the same region.
 
 ---
 
 ### Problem 3 — Ping not working
-**What happened:**
+**What happened:** After setting up both VMs and connecting to web-vm, pinging app-vm returned no replies even though the NSG should allow it.
 
-**Why it happened:**
+**Why it happened:** The Azure NSG was configured correctly, but Windows Server has its own built-in firewall inside the operating system. By default it blocks ICMP (ping) traffic — a separate layer of protection entirely.
 
-**How I fixed it:**
+**How I fixed it:** RDP'd into app-vm through web-vm, then ran this command in PowerShell as Administrator:
+```
+netsh advfirewall firewall add rule name="Allow ICMPv4" protocol=icmpv4:8,any dir=in action=allow
+```
+After that, ping worked immediately.
+
+**What I learned:** This is Defence in Depth in practice. There are multiple independent layers of security — the Azure NSG (network layer) and the Windows Firewall (compute layer) are separate and both need to be configured. Bypassing one doesn't bypass the other.
 
 
 
