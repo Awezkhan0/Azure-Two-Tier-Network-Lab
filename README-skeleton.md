@@ -60,9 +60,6 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 
 ## Problems I Hit and How I Fixed Them
 
-> ✏️ This is the most important section — be honest, explain what went wrong in your own words.
-> Don't worry about sounding perfect. "I kept getting quota errors because..." is great.
-
 ### Problem 1 — VM sizes unavailable
 **What happened:** When trying to deploy VMs, all B-series sizes (B1s, B1ms, B2s) showed as unavailable or hit quota limits.
 
@@ -122,8 +119,6 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 
 ## Screenshots
 
-> ✏️ Add your screenshots to a /screenshots folder and reference them here like this:
-> ![description](screenshots/filename.png)
 
 **VNet Subnets with NSGs attached:**
 
