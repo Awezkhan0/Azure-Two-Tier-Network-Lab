@@ -1,4 +1,4 @@
-# AAzure Secure Network Lab — Jump Box Architecture
+# Azure Secure Network Lab — Jump Box Architecture
 > A hands-on Azure networking lab demonstrating secure two-tier architecture, 
 > jump box access, and Defence in Depth using NSGs and Windows Firewall.
 
