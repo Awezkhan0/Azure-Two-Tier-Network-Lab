@@ -64,7 +64,6 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 > Don't worry about sounding perfect. "I kept getting quota errors because..." is great.
 
 ### Problem 1 — VM sizes unavailable
-Problem 1 — VM sizes showing as unavailable
 What happened: When trying to deploy VMs, all B-series sizes (B1s, B1ms, B2s) showed as unavailable or hit quota limits.
 
 Why it happened: Azure free trial accounts have very restrictive vCPU quotas. Even after upgrading to Pay As You Go, the quota didn't update immediately.
