@@ -132,7 +132,7 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.png?raw=true)
 
 **VM Status**
-![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.png?raw=true)
+![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-vm-status.png.png?raw=true)
 
 **Jump Box in Action — RDP into app-vm through web-vm:**
 ![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
