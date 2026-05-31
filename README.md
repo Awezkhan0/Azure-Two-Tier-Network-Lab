@@ -145,11 +145,6 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 
 ## What I Would Add Next
 
-> ✏️ What would you do to improve this project? Even one or two ideas shows you're thinking like an engineer.
-
-- 
-- 
-
 
 
 
