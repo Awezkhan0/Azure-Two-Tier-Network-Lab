@@ -139,7 +139,7 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
 
 **VM Status**
-![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.png?raw=true)
 
 ---
 
