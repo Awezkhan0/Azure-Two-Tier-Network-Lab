@@ -148,11 +148,11 @@ In Phase 1 I deliberately built the jump box manually without Bastion to underst
 ## What Changed?
 web-vm no longer has a public IP address. Connection is now made through the browser via HTTPS (port 443) rather than downloading an RDP file over port 3389
 
-## I Tested?
+## What I Tested?
 - ☑ Connected to web-vm through Azure Bastion via the browser — no RDP file, no public IP
 - ☑ From inside web-vm, RDP'd into app-vm using `mstsc /v:10.0.2.4` — proved internal connectivity still works through Bastion
 
-## I Learned?
+## What I Learned?
 Azure Bastion is more secure than a public RDP connection because it uses HTTPS (port 443) rather than RDP (port 3389). Port 3389 is actively targeted by attackers scanning the internet. With Bastion, the VM has no public IP at all
 
 ## Screenshots
