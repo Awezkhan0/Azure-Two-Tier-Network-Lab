@@ -146,11 +146,12 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ---
 
 ## What I Would Add Next
-
+- Install IIS on web-vm to serve a real webpage on port 80
+- Replace the manual jump box with Azure Bastion for more secure remote access
 
 
 
 ---
 
-*Part of my Azure cloud engineering learning journey alongside AZ-900 exam preparation.*
+*Part of my Azure cloud engineering learning journey alongside AZ-104 exam preparation.*
 
