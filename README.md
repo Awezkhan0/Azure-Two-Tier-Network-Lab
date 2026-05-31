@@ -43,7 +43,7 @@ In this project I built a secure two-tier network using Azure Portal. I created 
 ### app-nsg (For Private layer)
 | Priority | Rule Name | Source | Port | Action | Reason |
 |---|---|---|---|---|---|
-| 100 | Allow-From-WebSubnet | 10.0.1.0/24 | Any | Allow | Only Reception can enter |
+| 100 | Allow-From-WebSubnet | 10.0.1.0/24 | Any | Allow | Only web-subnet can access this VM |
 | 200 | Deny-All-Inbound | Any | Any | Deny | Everyone else blocked |
 
 ---
