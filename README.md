@@ -136,10 +136,10 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![Both VMs running](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/05-vmconnection.png?raw=true)
 
 **Jump Box in Action — RDP into app-vm through web-vm:**
-![Jump box](screenshots/06-jump-box.png)
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
 
-
-
+**VM Status**
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
 
 ---
 
