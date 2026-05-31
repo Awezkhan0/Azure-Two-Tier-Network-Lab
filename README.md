@@ -126,22 +126,22 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![VNet Subnets](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/01-vnet-subnets.png?raw=true)
 
 **web-nsg Inbound Rules:**
-![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png.?raw=true)
+![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png.png?raw=true)
 
 **app-nsg Inbound Rules:**
-![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.?raw=true)
+![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.png?raw=true)
 
 **Ping Success from web-vm to app-vm:**
-![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-ping-success.png.?raw=true)
+![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-ping-success.png.png?raw=true)
 
 **Remoting onto app-vm:**
 ![Both VMs running](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/05-vmconnection.png?raw=true)
 
 **Jump Box in Action — RDP into app-vm through web-vm:**
-![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.?raw=true)
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
 
 **VM Status**
-![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.?raw=true)
+![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.png?raw=true)
 
 ---
 
