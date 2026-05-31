@@ -104,15 +104,17 @@ After that, ping worked immediately.
 ---
 
 ## What I Learned
+**Jump Box / Bastion Host**
+web-vm acts as a jump box — the single controlled entry point into the private network. All admin access goes through it. app-vm is never directly exposed.
 
-> ✏️ 3-5 bullet points in your own words. What do you now understand that you didn't before?
-> Think about: regions, Defence in Depth, Jump Box, NSGs vs Windows Firewall...
+**Least Privilege**
+app-nsg only allows traffic from web-subnet (10.0.1.0/24). Nothing else. No exceptions. This means even if someone got onto the VNet somehow, they still couldn't reach app-vm unless they came from the correct subnet.
 
-- 
-- 
-- 
-- 
+**Defence in Depth**
+Two separate firewalls protect app-vm — the Azure NSG at the network layer and Windows Firewall at the compute layer. Each is independent. Both must be configured.
 
+**Network Segmentation**
+Splitting the network into web-subnet and app-subnet means a breach in the public-facing tier doesn't automatically compromise the private tier. Each subnet has its own security boundary.
 
 
 
