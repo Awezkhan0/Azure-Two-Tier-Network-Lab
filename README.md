@@ -121,18 +121,22 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 
 
 **VNet Subnets with NSGs attached:**
+![VNet Subnets](screenshots/01-vnet-subnets.png)
 
+**web-nsg Inbound Rules:**
+![web-nsg rules](screenshots/02-web-nsg-rules.png)
 
-**web-nsg rules:**
+**app-nsg Inbound Rules:**
+![app-nsg rules](screenshots/03-app-nsg-rules.png)
 
+**Both VMs Running:**
+![Both VMs running](screenshots/04-vms-running.png)
 
-**app-nsg rules:**
+**Ping Success from web-vm to app-vm:**
+![Ping success](screenshots/05-ping-success.png)
 
-
-**Both VMs running:**
-
-
-**Ping success:**
+**Jump Box in Action — RDP into app-vm through web-vm:**
+![Jump box](screenshots/06-jump-box.png)
 
 
 
