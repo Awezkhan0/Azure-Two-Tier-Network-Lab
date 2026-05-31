@@ -1,4 +1,6 @@
 # Azure Secure Two-Tier Network Lab
+> A hands-on Azure networking lab demonstrating secure two-tier architecture, 
+> jump box access, and Defence in Depth using NSGs and Windows Firewall.
 
 ## What is this project?
 In this project I built a secure two-tier network using Azure Portal. I created a private layer that has no public IP and can only be accessed through a jump box without the use of Bastion. The purpose of this was to have a private VM that cannot be directly reached from the internet, simulating how a real backend server or database would be protected in a production environment.
@@ -124,22 +126,22 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![VNet Subnets](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/01-vnet-subnets.png?raw=true)
 
 **web-nsg Inbound Rules:**
-![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png.png?raw=true)
+![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png.?raw=true)
 
 **app-nsg Inbound Rules:**
-![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.png?raw=true)
+![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.?raw=true)
 
 **Ping Success from web-vm to app-vm:**
-![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-ping-success.png.png?raw=true)
+![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-ping-success.png.?raw=true)
 
 **Remoting onto app-vm:**
 ![Both VMs running](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/05-vmconnection.png?raw=true)
 
 **Jump Box in Action — RDP into app-vm through web-vm:**
-![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.png?raw=true)
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-jump-box.png.?raw=true)
 
 **VM Status**
-![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.png?raw=true)
+![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/07-vm-status.png.?raw=true)
 
 ---
 
