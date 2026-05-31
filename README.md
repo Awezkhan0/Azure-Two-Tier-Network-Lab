@@ -127,7 +127,7 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 ![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png.png?raw=true)
 
 **app-nsg Inbound Rules:**
-![app-nsg rules](screenshots/03-app-nsg-rules.png)
+![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png.png?raw=true)
 
 **Both VMs Running:**
 ![Both VMs running](screenshots/04-vms-running.png)
