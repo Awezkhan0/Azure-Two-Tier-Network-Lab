@@ -156,7 +156,7 @@ Web-vm no longer has a public IP address. Connection is now made through the bro
 Azure Bastion is more secure than a public RDP connection because it uses HTTPS (port 443) rather than RDP (port 3389). RDP is actively targeted by attackers scanning the internet. With Bastion, the VM has no public IP at all
 
 ## Screenshots
-
+![Phase 2 Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/01-vnet-bastionsubnet.png?raw=true)
 
 ---
 
