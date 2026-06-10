@@ -158,6 +158,8 @@ Azure Bastion is more secure than a public RDP connection because it uses HTTPS 
 ## Screenshots
 ![Phase 2 Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/01-vnet-bastionsubnet.png?raw=true)
 
+![Phase 2 Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/02-vnet-createbastion.png?raw=true)
+
 ---
 
 *Part of my Azure cloud engineering learning journey alongside AZ-104 exam preparation.*
