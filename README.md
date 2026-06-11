@@ -184,6 +184,7 @@ The web-vm's Windows desktop is now streaming directly in the browser. The conne
 
 ### Using Bastion as a Jumpbox
 ![bastion complete](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/06-bastion-jumpbox.png?raw=true)
+
 I've run mstsc /v:10.0.2.4, RDP-ing to a private IP on the app-subnet. This opened a new Remote Desktop window to the app-tier VM, proving that it works.
 ---
 
