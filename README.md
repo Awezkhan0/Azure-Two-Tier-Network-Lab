@@ -124,26 +124,27 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 
 **VNet Subnets with NSGs attached:**
 ![VNet Subnets](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/01-vnet-subnets.png?raw=true)
-
+Two subnets have been created within project-vnet — web-subnet and app-subnet, each with their own NSG assigned (web-nsg and app-nsg).
 
 **web-nsg Inbound Rules:**
 ![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png?raw=true)
+The web-nsg allows inbound RDP (port 3389) and HTTP (port 80) traffic, making the web-vm accessible from the internet.
 
 **app-nsg Inbound Rules:**
 ![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png?raw=true)
-
+he app-nsg only allows traffic originating from the web-subnet (10.0.1.0/24), with everything else denied — keeping the app tier isolated from direct internet access.
 
 **VM Status**
 ![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-vm-status.png?raw=true)
-
+Both web-vm and app-vm are shown as Running in the Azure portal, confirming both VMs are up and operational.
 
 **Jump Box in Action — RDP into app-vm through web-vm:**
 ![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/05-jump-box.png?raw=true)
-
+Successfully RDP'd into app-vm from web-vm, with both desktops visible — demonstrating the jumpbox pattern working.
 
 **Ping Success from web-vm to app-vm:**
 ![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-ping-success.png?raw=true)
-
+A ping 10.0.2.4 was run from web-vm and received successful replies, confirming that the two subnets can communicate with each other.
 ---
 
 ## Phase 2 — Upgrading to Azure Bastion
@@ -160,23 +161,29 @@ Web-vm no longer has a public IP address. Connection is now made through the bro
 Azure Bastion is more secure than a public RDP connection because it uses HTTPS (port 443) rather than RDP (port 3389). RDP is actively targeted by attackers scanning the internet. With Bastion, the VM has no public IP at all
 
 ## Screenshots
+### Creating the AzureBastionSubnet
 ![Phase 2 Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/01-vnet-bastionsubnet.png?raw=true)
-I created a new subnet which is now sitting alongside the existing web-subnet and app-subnet. In order for Azure Bastion to work I had to name it exactly "AzureBastionSubnet."
+I created a new subnet which is now sitting alongside the existing web-subnet and app-subnet. In order for Azure Bastion to work, I had to name it exactly "AzureBastionSubnet."
 
+### Creating the Bastion Resource
 ![Create Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/02-vnet-createbastion.png?raw=true)
-I'm creating the Bastion resource, as you can see it's basic tier and connected to the subnet I just made "AzureBastionSubnet." The IP address creation was part of the creation process as I chose a public ip address naming it "bastion-pip"
+I'm creating the Bastion resource; as you can see, it's on the Basic tier and connected to the subnet I just made, "AzureBastionSubnet." The public IP address creation was part of the creation process, where I named it "bastion-pip."
 
+### Dissociating the Public IP from web-vm
 ![ipassociate](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/03-webvm-ipdissociate.png?raw=true)
-Dissociating the public IP address for web-vm as we're connecting through Bastion now. Leaving it on now would still enable the risk that RDP poses.
+Dissociating the public IP address from web-vm, as we're now connecting through Bastion. Leaving it attached would still expose the security risk that RDP poses.
 
+### Connecting to web-vm via Bastion
 ![connect bastian](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/04-webvm-connectviabastion.png?raw=true)
-I'm now in the resource that I want to connect to through Bastion, and you can see that there's an option to connect via the dropdown. Also one thing to note is that NIC public ip address is now blankw which is what I wanted to see.
+I'm now in the resource that I want to connect to through Bastion, and you can see there is an option to connect via the dropdown. Also worth noting is that the NIC public IP address is now blank, which is what I wanted to see.
 
+### Successfully Connected via Bastion
 ![webvm bastian connected](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/05-webvm-connected.png?raw=true)
-The web-vm's Windows desktop is now streaming directly in the browser. The connection is tunnelled over HTTPS through the Bastion HOST - No RDP client needed.
+The web-vm's Windows desktop is now streaming directly in the browser. The connection is tunnelled over HTTPS through the Bastion host — no RDP client needed.
 
+### Using Bastion as a Jumpbox
 ![bastion complete](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/06-bastion-jumpbox.png?raw=true)
-I've run mstsc /v:10.0.2.4 — RDP-ing to a private IP being the app-subnet. This oponed a new remote desktop window to that app-tier VM proving that it works.
+I've run mstsc /v:10.0.2.4, RDP-ing to a private IP on the app-subnet. This opened a new Remote Desktop window to the app-tier VM, proving that it works.
 ---
 
 *Part of my Azure cloud engineering learning journey alongside AZ-104 exam preparation.*
