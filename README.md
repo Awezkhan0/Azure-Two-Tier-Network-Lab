@@ -132,7 +132,7 @@ The web-nsg allows inbound RDP (port 3389) and HTTP (port 80) traffic, making th
 
 **app-nsg Inbound Rules:**
 ![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png?raw=true)
-he app-nsg only allows traffic originating from the web-subnet (10.0.1.0/24), with everything else denied — keeping the app tier isolated from direct internet access.
+The app-nsg only allows traffic originating from the web-subnet (10.0.1.0/24), with everything else denied — keeping the app tier isolated from direct internet access.
 
 **VM Status**
 ![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-vm-status.png?raw=true)
@@ -145,6 +145,7 @@ Successfully RDP'd into app-vm from web-vm, with both desktops visible — demon
 **Ping Success from web-vm to app-vm:**
 ![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-ping-success.png?raw=true)
 A ping 10.0.2.4 was run from web-vm and received successful replies, confirming that the two subnets can communicate with each other.
+
 ---
 
 ## Phase 2 — Upgrading to Azure Bastion
