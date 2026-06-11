@@ -125,17 +125,21 @@ Splitting the network into web-subnet and app-subnet means a breach in the publi
 **VNet Subnets with NSGs attached:**
 ![VNet Subnets](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/01-vnet-subnets.png?raw=true)
 
+
 **web-nsg Inbound Rules:**
 ![web-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/02-web-nsg-rules.png?raw=true)
 
 **app-nsg Inbound Rules:**
 ![app-nsg rules](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/03-app-nsg-rules.png?raw=true)
 
+
 **VM Status**
 ![VM Status](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/04-vm-status.png?raw=true)
 
+
 **Jump Box in Action — RDP into app-vm through web-vm:**
 ![Jump box](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/05-jump-box.png?raw=true)
+
 
 **Ping Success from web-vm to app-vm:**
 ![Ping success](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/06-ping-success.png?raw=true)
@@ -157,16 +161,22 @@ Azure Bastion is more secure than a public RDP connection because it uses HTTPS 
 
 ## Screenshots
 ![Phase 2 Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/01-vnet-bastionsubnet.png?raw=true)
+I created a new subnet which is now sitting alongside the existing web-subnet and app-subnet. In order for Azure Bastion to work I had to name it exactly "AzureBastionSubnet."
 
 ![Create Bastion](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/02-vnet-createbastion.png?raw=true)
+I'm creating the Bastion resource, as you can see it's basic tier and connected to the subnet I just made "AzureBastionSubnet." The IP address creation was part of the creation process as I chose a public ip address naming it "bastion-pip"
 
 ![ipassociate](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/03-webvm-ipdissociate.png?raw=true)
+Dissociating the public IP address for web-vm as we're connecting through Bastion now. Leaving it on now would still enable the risk that RDP poses.
 
 ![connect bastian](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/04-webvm-connectviabastion.png?raw=true)
+I'm now in the resource that I want to connect to through Bastion, and you can see that there's an option to connect via the dropdown. Also one thing to note is that NIC public ip address is now blankw which is what I wanted to see.
 
 ![webvm bastian connected](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/05-webvm-connected.png?raw=true)
+The web-vm's Windows desktop is now streaming directly in the browser. The connection is tunnelled over HTTPS through the Bastion HOST - No RDP client needed.
 
 ![bastion complete](https://github.com/Awezkhan0/Azure-Two-Tier-Network-Lab/blob/main/Screenshots/Phase%202%20Bastion/06-bastion-jumpbox.png?raw=true)
+I've run mstsc /v:10.0.2.4 — RDP-ing to a private IP being the app-subnet. This oponed a new remote desktop window to that app-tier VM proving that it works.
 ---
 
 *Part of my Azure cloud engineering learning journey alongside AZ-104 exam preparation.*
